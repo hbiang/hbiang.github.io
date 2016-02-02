@@ -1,209 +1,137 @@
+﻿<!DOCTYPE html>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<html>
+<head>
+    <title>H'Biang Demo 01</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Hello World!</title>
-    
-    <meta name="author" content="Name Lastname">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="robots" content="index, follow" />
 
-    <!-- Enable responsive viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Bootstrap styles -->
-    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Optional theme -->
-    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
-    <!-- Sticky Footer -->
-    <link href="/assets/themes/bootstrap-3/bootstrap/css/bs-sticky-footer.css" rel="stylesheet">
-    
-    <!-- Custom styles -->
-    <link href="/assets/themes/bootstrap-3/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Fav and touch icons -->
-    <!-- Update these with your own images
-      <link rel="shortcut icon" href="images/favicon.ico">
-      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-      <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-      <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <!--
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     -->
 
-    <!-- atom & rss feed -->
-    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
-    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/jquery.easings.min.js" type="text/javascript"></script>
+    <script src="js/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="js/jquery.fullPage.js" type="text/javascript"></script>
 
-  </head>
+    <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="http://bootswatch.com/journal/bootstrap.min.css" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
-  <body>
-    <div id="wrap">
-      <nav class="navbar navbar-default" role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#jb-navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">Jekyll Bootstrap</a>
-        </div>
+    <link rel="stylesheet" type="text/css" media="all" href="css/demo01.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/jquery.fullPage.css" />
+</head>
+<body>
+    <div id="fullpage">
+        <section id="hello_section" class="section active">
+            <table align="center">
+                <tr>
+                    <td class="v_middle">
+                        <!--<img src="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,f_auto,h_3000,q_90,w_1200/2_kf5dzb.png">-->
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <section id="about_section" class="section"></section>
+        <section id="products_section" class="section">
+            <table align="center">
+                <tr>
+                    <td>
+                        <a id="link_order" class="btn btn-primary">Mua</a>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <section id="contact_section" class="section"></section>
+    </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="jb-navbar-collapse">
-          <ul class="nav navbar-nav">
-            
-            
-            
+    <nav class="dark">
+        <ul id="m_menu">
+            <li data-menuanchor="hello" class="active">
+                <a href="#hello">
+                    <i class="fa fa-home"></i>
+                    <span class="desc">Trang chủ</span>
+                </a>
+            </li>
+            <li data-menuanchor="about">
+                <a href="#about">
+                    <span class="fa fa-info"></span>
+                    <span class="desc">Giới thiệu</span>
+                </a>
+            </li>
+            <li data-menuanchor="product">
+                <a href="#product">
+                    <span class="fa fa-shopping-bag"></span>
+                    <span class="desc">Sản phẩm</span>
+                </a>
+            </li>
+            <li data-menuanchor="contact">
+                <a href="#contact">
+                    <span class="fa fa-envelope"></span>
+                    <span class="desc">Liên hệ</span>
+                </a>
+            </li>
+            <li data-menuanchor="facebook">
+                <a id="link_facebook" href="#facebook">
+                    <span class="fa fa-facebook"></span>
+                    <span class="desc">Facebook</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 
+    <div id="order_modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
 
-  
-    
-      
-      	
-      	<li><a href="/archive">Archive</a></li>
-      	
-      
-    
-  
-    
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/categories">Categories</a></li>
-      	
-      
-    
-  
-    
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/pages">Pages</a></li>
-      	
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/tags">Tags</a></li>
-      	
-      
-    
-  
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <p style="font-weight:bold;font-size:1.2em">Loại 300 - Vị đậm - 250g</p>
 
+                </div>
 
-
-          </ul>
-          <form class="navbar-form navbar-right" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
+                <div class="modal-body">
+                    <p style="font-size:1.2em;">
+                       <input type="text" class="form-control" id="txt_qty" style="width:60px;display:inline;text-align:center;font-size:1.2em" maxlength="3" />
+                        gói = 1.500.000đ
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Thêm vào đơn hàng</button>
+                </div>
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form>
-        </div><!-- /.navbar-collapse -->
-      </nav>
 
-      <div class="container">
-        
-<div class="page-header">
-  <h1>Hello World!  <small>Supporting tagline</small></h1>
-</div>
-
-<div class="row">
-  <div class="col-xs-12">
-    
-<p>Read <a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html">Jekyll Quick Start</a></p>
-
-<p>Complete usage and documentation available at: <a href="http://jekyllbootstrap.com">Jekyll Bootstrap</a></p>
-
-<h2 id="update-author-attributes">Update Author Attributes</h2>
-
-<p>In <code>_config.yml</code> remember to specify your own data:</p>
-
-<pre><code>title : My Blog =)
-
-author :
-  name : Name Lastname
-  email : blah@email.test
-  github : username
-  twitter : username
-</code></pre>
-
-<p>The theme should reference these variables whenever needed.</p>
-
-<h2 id="sample-posts">Sample Posts</h2>
-
-<p>This blog contains sample posts which help stage pages and blog data.
-When you don’t need the samples anymore just delete the <code>_posts/core-samples</code> folder.</p>
-
-<pre><code>$ rm -rf _posts/core-samples
-</code></pre>
-
-<p>Here’s a sample “posts list”.</p>
-
-<ul class="posts">
-  
-    <li><span>29 Dec 2011</span> &raquo; <a href="/lessons/2011/12/29/jekyll-introduction">Jekyll Introduction</a></li>
-  
-</ul>
-
-<h2 id="to-do">To-Do</h2>
-
-<p>This theme is still unfinished. If you’d like to be added as a contributor, <a href="http://github.com/plusjade/jekyll-bootstrap">please fork</a>!
-We need to clean up the themes, make theme usage guides with theme-specific markup examples.</p>
-
-
-  </div>
-</div>
-
-
-      </div>
-
+        </div>
     </div>
 
-    <div id="footer">
-      <div class="container">
-        <p>&copy; 2016 Name Lastname
-          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
-          and <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>
-        </p>
-      </div>
-    </div>
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+            $('#fullpage').fullpage({
+                sectionSelector: '.section',
+                slideSelector: '.slide',
+                slidesNavigation: true,
+                slidesNavPosition: 'bottom',
+                anchors: ['hello', 'about', 'product', 'contact', 'facebook'],
+                menu: '#m_menu'
+            });
 
-    
+            $('#link_facebook').bind('click', function (e) {
+                e.stopPropagation();
+                alert('link to facebook page');
+            });
 
-
-
-
-
-    <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="/assets/themes/bootstrap-3/bootstrap/js/bootstrap.min.js"></script>
-  </body>
+            $('#link_order').bind('click', function () {
+                $('#order_modal').modal('show');
+            });
+        });
+    </script>
+</body>
 </html>
-
