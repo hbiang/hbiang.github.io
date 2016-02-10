@@ -32,6 +32,10 @@ a, a:link, a:visited {
     background-color:#592a31;
 }
 
+#social_section {
+    background-color:#666159;
+}
+
 #m_menu {
     position:fixed;
     bottom:0;
@@ -162,4 +166,63 @@ h4.modal-title {font-family:roboto; font-weight:300;}
     border-radius:0;
     -webkit-box-shadow:none;
     box-shadow: none;
+}
+
+#hello_section #p1_logo_area {
+}
+
+#hello_section #p1_logo_area #p1_logo {
+    border:none;
+    margin:0 auto;
+    display:block;
+    width:40%;    
+}
+
+#hello_section #p1_logo_area #p1_products {
+    border:none;
+    margin:0 auto;
+    display:block;
+    width:25%;    
+}
+
+#about_section #p2_products {
+    border:none;
+    margin:0 auto;
+    display:block;
+    max-width:1024px;    
+}
+
+#products_section #p3_products {
+    border:none;
+    margin:0 auto;
+    display:block;
+}
+
+#contact_section #p4_title {
+    border:none;
+    margin:0 auto;
+    display:block;
+    max-width:700px;
+}
+
+#contact_section_body {
+    width:100%;
+    display:block;
+    border:solid 1px;
+    background-image: url('../images/p4_bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+#hello_section #p1_slogan_area {
+    font-size:8em;
+    color:#a18a69;
+    font-weight:300;
+}
+
+.section_inner {
+    height:100%;
+    width:100%;
+    display:block;
 }

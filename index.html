@@ -17,7 +17,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/jquery.easings.min.js" type="text/javascript"></script>
     <script src="js/jquery.slimscroll.min.js" type="text/javascript"></script>
-    <script src="js/jquery.fullpage.js" type="text/javascript"></script>
+    <script src="js/jquery.fullPage.js" type="text/javascript"></script>
 
     <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">-->
@@ -31,25 +31,30 @@
 <body>
     <div id="fullpage">
         <section id="hello_section" class="section active">
-            <table align="center">
-                <tr>
-                    <td class="v_middle">
-                        <!--<img src="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,f_auto,h_3000,q_90,w_1200/2_kf5dzb.png">-->
-                    </td>
-                </tr>
-            </table>
+            <div id="p1_logo_area">
+                <img id="p1_logo" src="images/p1_logo.jpg">
+            </div>
+            <div id="p1_logo_area" style="margin-top:0;">
+                <img id="p1_products" src="images/p1_products.jpg">
+            </div>            
         </section>
-        <section id="about_section" class="section"></section>
+        <section id="about_section" class="section">
+            <img id="p2_products" src="images/p2_intro.jpg">
+        </section>
         <section id="products_section" class="section">
-            <table align="center">
-                <tr>
-                    <td>
-                        <a id="link_order" class="btn btn-primary">Mua</a>
-                    </td>
-                </tr>
-            </table>
+            <img id="p3_products" src="images/p3_products.jpg">
         </section>
-        <section id="contact_section" class="section"></section>
+        <section id="contact_section" class="section">
+            <div id="contact_section_head" style="height:30%">
+                <img id="p4_title" src="images/p4_title.jpg">
+            </div>
+            <div id="contact_section_body" style="height:70%;">
+
+            </div>
+        </section>
+        <section id="social_section" class="section">
+            
+        </section>
     </div>
 
     <nav class="dark">
@@ -78,8 +83,8 @@
                     <span class="desc">Liên hệ</span>
                 </a>
             </li>
-            <li data-menuanchor="facebook">
-                <a id="link_facebook" href="#facebook">
+            <li data-menuanchor="social">
+                <a id="link_facebook" href="#social">
                     <span class="fa fa-facebook"></span>
                     <span class="desc">Facebook</span>
                 </a>
@@ -119,14 +124,14 @@
                 slideSelector: '.slide',
                 slidesNavigation: true,
                 slidesNavPosition: 'bottom',
-                anchors: ['hello', 'about', 'product', 'contact', 'facebook'],
+                anchors: ['hello', 'about', 'product', 'contact', 'social'],
                 menu: '#m_menu'
             });
 
-            $('#link_facebook').bind('click', function (e) {
+            /*$('#link_facebook').bind('click', function (e) {
                 e.stopPropagation();
                 alert('link to facebook page');
-            });
+            });*/
 
             $('#link_order').bind('click', function () {
                 $('#order_modal').modal('show');
