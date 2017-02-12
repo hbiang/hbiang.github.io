@@ -68,7 +68,7 @@ html {
     height: 3rem;
   }
   #page-03 {
-    background: url("/res/images/page03-bg.png") no-repeat center center;
+    background: url("/v2/res/images/page03-bg.png") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -85,7 +85,7 @@ html {
   #page-01 {
     background-color: transparent;
     /*Default bg, similar to the background's base color*/
-    background-image: url("/res/images/page01-bg.png");
+    background-image: url("/v2/res/images/page01-bg.png");
     background-position: right bottom;
     /*Positioning*/
     background-repeat: no-repeat;
@@ -108,7 +108,7 @@ html {
 #page-01 {
   background-color: transparent;
   /*Default bg, similar to the background's base color*/
-  background-image: url("/res/images/page01-bg.png");
+  background-image: url("/v2/res/images/page01-bg.png");
   background-position: right bottom;
   /*Positioning*/
   background-repeat: no-repeat;
@@ -125,7 +125,7 @@ html {
     background-size: 55%;
   }
   #page-03 {
-    background: url("/res/images/page03-bg.png") no-repeat center center;
+    background: url("/v2/res/images/page03-bg.png") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
