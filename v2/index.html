@@ -339,12 +339,38 @@
     <script>
         $(document).ready(function() {
             $('map').imageMapResize();
+            
+            $('<p id="back-to-top"><a href="#top" alt="Back to top"><span></span></a></p>')
+                .click(function () {
+                    $('html,body').animate({
+                        scrollTop: 0
+                    }, 1800);
+                    return false;
+                })
+                .appendTo($('body'));
         });
         
         $(".product").on("click", function(e){
             e.preventDefault();
             $('#myModal').modal();
         });
+        
+        function animateButton() {
+            var button = $('#back-to-top');
+            var scrollPosition = $(window).scrollTop();
+            if (scrollPosition > 400) {
+                button.fadeIn();
+            } else {
+                button.fadeOut();
+            }
+        }       
+
+        /**
+         * Run the animateButton function on window resize, scroll, and load.
+         */
+        $(window).resize(animateButton);
+        $(window).scroll(animateButton);
+        $(window).load(animateButton);
     </script>
 </body>
 
