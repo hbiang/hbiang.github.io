@@ -70,11 +70,17 @@
             <div class="row">
                 <div class="mx-auto" style="width: 20%">
                     <img class="img-fluid" alt="Responsive image" id="img-page06-sanpham" src="/v2/res/images/page06-sanpham.png" />
+                    
                 </div>
             </div>
             <div class="row" style="">
                 <div class="offset-xs-1">
-                    <img class="img-fluid" alt="Responsive image" id="img-page06-sanpham-bg" src="/v2/res/images/page06-sanpham-bg.png" />
+                    <img class="img-fluid" alt="Responsive image" id="img-page06-sanpham-bg" usemap="#productmap" hidefocus="true"  src="/v2/res/images/page06-sanpham-bg.png" />
+                    <map name="productmap">
+                        <area class="product" alt="" title="H'Biang * * *" href="#" shape="rect" coords="61,318,213,359" />
+                        <area class="product" alt="" title="H'Biang * *" href="#" shape="rect" coords="300,455,454,494" />
+                        <area class="product" alt="" title="H'Biang *" href="#" shape="rect" coords="655,583,808,623" />
+                    </map>
                 </div>
             </div>
 
@@ -95,7 +101,7 @@
                 <div class="card" style="background-color:#fcfcfc;border:none">
                     <img class="card-img-top img-fluid" src="/v2/res/images/page06-sanpham-02.png " style="width:100%;margin-top:1rem;" alt="Card image cap">
                     <div class="card-block">
-                        <h4 class="card-title text-xs-center">HBIANG</h4>
+                        <h4 class="card-title text-xs-center">H'BIANG</h4>
                         <p class="text-xs-center">
                             <img src="/v2/res/images/star.png" class="center-block">
                         </p>
@@ -116,7 +122,7 @@
                 <div class="card" style="background-color:#fcfcfc;border:none">
                     <img class="card-img-top img-fluid" src="/v2/res/images/page06-sanpham-02.png " style="width:100%;margin-top:1rem;" alt="Card image cap">
                     <div class="card-block">
-                        <h4 class="card-title text-xs-center">HBIANG</h4>
+                        <h4 class="card-title text-xs-center">H'BIANG</h4>
                         <p class="text-xs-center">
                             <img src="/v2/res/images/2stars.png" class="center-block">
                         </p>
@@ -137,7 +143,7 @@
                 <div class="card" style="background-color:#fcfcfc;border:none">
                     <img class="card-img-top img-fluid" src="/v2/res/images/page06-sanpham-02.png" style="width:100%;margin-top:1rem;" alt="Card image cap">
                     <div class="card-block">
-                        <h4 class="card-title text-xs-center">HBIANG</h4>
+                        <h4 class="card-title text-xs-center">H'BIANG</h4>
                         <p class="text-xs-center">
                             <img src="/v2/res/images/3stars.png" class="center-block">
                         </p>
@@ -307,6 +313,18 @@
     <script src="/v2/res/lib/jquery/jquery.min.js"></script>
     <script src="/v2/res/lib/tether/js/tether.js"></script>
     <script src="/v2/res/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="/v2/res/js/imagemap.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            $('map').imageMapResize();
+        });
+        
+        $(".product").on("click", function(e){
+            e.preventDefault();
+            alert('Order');
+        });
+    </script>
 </body>
 
 </html>

@@ -147,3 +147,11 @@ html {
 .fa {
   font-size: 2rem;
 }
+
+img.map, map area{
+    outline: none;
+}
+
+img[usemap], map area{
+    outline: none;
+}
