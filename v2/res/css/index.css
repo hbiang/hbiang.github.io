@@ -33,7 +33,7 @@ html {
   }
   #page-03 {
     min-height: 300px;
-    background: url("/res/images/page03-bg.png") no-repeat center center;
+    background: url("/v2/res/images/page03-bg.png") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
