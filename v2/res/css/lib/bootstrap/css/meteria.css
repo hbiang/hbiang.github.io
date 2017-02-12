@@ -4155,7 +4155,7 @@ tbody.collapse.in {
 }
 
 .card-text:last-child {
-  margin-bottom: 0;
+  /*margin-bottom: 0;*/
 }
 
 .card-link:hover {
