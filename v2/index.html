@@ -340,11 +340,11 @@
         $(document).ready(function() {
             $('map').imageMapResize();
             
-            $('<p id="back-to-top"><a href="#top" alt="Back to top"><span></span></a></p>')
+            $('<p id="back-to-top" style="display:none;"><a href="#top" alt="Back to top"><span></span></a></p>')
                 .click(function () {
                     $('html,body').animate({
                         scrollTop: 0
-                    }, 1800);
+                    }, 800);
                     return false;
                 })
                 .appendTo($('body'));
@@ -358,7 +358,7 @@
         function animateButton() {
             var button = $('#back-to-top');
             var scrollPosition = $(window).scrollTop();
-            if (scrollPosition > 400) {
+            if (scrollPosition > 1200) {
                 button.fadeIn();
             } else {
                 button.fadeOut();
