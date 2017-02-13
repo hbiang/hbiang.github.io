@@ -205,13 +205,11 @@ img[usemap], map area{
     background-color: #fff;
 }
 
-.modal-header {
-  border-bottom: none;
+.modal-header {  
   background-color: #fafafa;
 }
 
-.modal-footer {
-  border-top:none;
+.modal-footer {  
   background-color: #fcfcfc;
 }
 
