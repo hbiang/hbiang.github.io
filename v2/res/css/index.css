@@ -217,3 +217,9 @@ img[usemap], map area{
 .table thead th {
   background-color: #fafafa;
 }
+
+
+textarea, textarea.form-control, input.form-control, input[type=text], input[type=password], input[type=email], input[type=number], [type=text].form-control, [type=password].form-control, [type=email].form-control, [type=tel].form-control, [contenteditable].form-control {
+    padding: 0rem 1rem;
+    border: solid 1px #ddd;    
+}
