@@ -202,6 +202,7 @@ img[usemap], map area{
 
 .table tbody>tr>td, .table tbody>tr>th{
     vertical-align: middle;
+    background-color: #fff;
 }
 
 .modal-header {
@@ -229,4 +230,10 @@ textarea, textarea.form-control, input.form-control, input[type=text], input[typ
 
 textarea {
     resize: none;
+}
+
+@media (max-width: 320px) {
+  .modal-body {
+    padding:0;
+  }
 }
