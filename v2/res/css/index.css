@@ -203,3 +203,13 @@ img[usemap], map area{
 .table tbody>tr>td, .table tbody>tr>th{
     vertical-align: middle;
 }
+
+.modal-header {
+  border-bottom: none;
+  background-color: #eee;
+}
+
+.modal-header {
+  border-top:none;
+  background-color: #fcfcfc;
+}
