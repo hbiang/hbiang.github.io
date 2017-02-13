@@ -213,3 +213,7 @@ img[usemap], map area{
   border-top:none;
   background-color: #fcfcfc;
 }
+
+.table thead th {
+  background-color: #fafafa;
+}
