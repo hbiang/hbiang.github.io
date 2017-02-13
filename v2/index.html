@@ -209,8 +209,8 @@
                 <div class="col-sm-7 offset-sm-1 col-xs-6">
                     <img class="img-fluid" alt="Responsive image" id="img-page03-dichvu" src="/v2/res/images/page03-dichvu.png" />
                 </div>
-                <div class="col-sm-5 offset-sm-1  col-xs-10">
-                    <p class="" style="color:#000;font-size:1.2rem;">
+                <div class="col-sm-5 offset-sm-1  col-xs-9">
+                    <p class="service-text" style="color:#000;">
                         <strong><i>Nhận in logo và nội dung theo yêu cầu của khách lên bao bì và hộp đựng cà phê để làm quà tặng doanh nghiệp. 
                     Xin vui lòng liên hệ sales@hbiang.com</i></strong>
                     </p>
@@ -315,16 +315,80 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Giỏ hàng</h5>
+        <h5 class="modal-title" id="exampleModalLabel">THÔNG TIN ĐƠN HÀNG</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="fit hidden-xs-down">#</th>
+                    <th class="" style="white-space: nowrap">Sản phẩm</th>
+                    <th class="fit text-xs-center">Số lượng</th>                    
+                    <th class="fit text-xs-right">Thành tiền</th>
+                    <th class="fit text-xs-right"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th class="hidden-xs-down" scope="row">1</th>
+                    <td>H'Biang ***</td>
+                    <td class="text-xs-center">
+                        <input class="form-control text-xs-center" min="1" max="9999" type="number" value="5" id="example-number-input">
+                    </td>                   
+                    <td class="text-xs-right">200.000đ</td>
+                    <td class="text-xs-right">
+                        <button type="button" class="btn btn-secondary btn-sm" style="box-shadow: none" title="Xóa">
+                            <i style="color:#aaa;font-size: 1.0rem" class="fa fa-times-circle"></i>
+                        </button>
+                    </td>                    
+                </tr>
+                <tr>
+                    <th class="hidden-xs-down" scope="row">2</th>
+                    <td>H'Biang ***</td>
+                    <td class="text-xs-center">
+                        <input class="form-control text-xs-center" min="1" max="9999" type="number" value="3" id="example-number-input">
+                    </td>                    
+                    <td class="text-xs-right">100.000đ</td>
+                    <td class="text-xs-right">
+                        <button type="button" class="btn btn-secondary btn-sm" style="box-shadow: none" title="Xóa">
+                            <i style="color:#aaa;font-size: 1.0rem" class="fa fa-times-circle"></i>
+                        </button>
+                    </td>
+                </tr>   
+                 <tr>      
+                    <th class="hidden-xs-down" scope="row"></th>       
+                    <td colspan="2" class="text-xs-right">
+                        Tổng cộng
+                    </td>                    
+                    <td class="text-xs-right" style="font-size: 1.2rem"><strong>1.000.000đ</strong></td>
+                </tr>          
+            </tbody>
+        </table>
+        <p class="text-xs-small"><i>(Vui lòng nhập các thông tin bên dưới để hoàn thành việc đặt hàng)</i></p>
+        <div>      
+            <div class="form-group">      
+                <label for="exampleTextarea">TÊN KHÁCH HÀNG</label>          
+                <input class="form-control" type="text" value="" id="txtName">
+            </div>
+            <div class="form-group">
+                <label for="exampleTextarea">THÔNG TIN LIÊN HỆ</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Số điện thoại hoặc Email">                
+            </div>
+            <div class="form-group">
+                <label for="exampleTextarea">ĐỊA CHỈ GIAO HÀNG (nếu cần)</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">                
+            </div>
+            <div class="form-group">
+                <label for="exampleTextarea">LỜI NHẮN</label>
+                <textarea class="form-control" id="exampleTextarea" rows="2"></textarea>
+            </div>            
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btn-md" data-dismiss="modal" style="margin-right:0.5rem;">Mua tiếp</button>
+        <!--<button type="button" class="btn btn-secondary btn-md" data-dismiss="modal" style="margin-right:0.5rem;">Mua tiếp</button>-->
         <button type="button" class="btn btn-primary btn-md" style="background-color: #a25e33">Đặt hàng</button>
       </div>
     </div>
@@ -371,6 +435,9 @@
         $(window).resize(animateButton);
         $(window).scroll(animateButton);
         $(window).load(animateButton);
+
+        //num.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
+        ///(\d)(?=(\d{3})+$)/g
     </script>
 </body>
 
