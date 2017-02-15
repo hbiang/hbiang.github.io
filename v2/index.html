@@ -508,7 +508,7 @@
                 renderShoppingCart();
             });
 
-            $('#cart-products .product-qty').bind('mouseup keyup', function() {
+            $('#cart-products .product-qty').change(function() {
                 var number = $(this);
                 var qty = number.val();
                 
