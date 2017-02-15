@@ -77,9 +77,9 @@
                 <div class="offset-xs-1">
                     <img class="img-fluid" alt="Responsive image" id="img-page06-sanpham-bg" usemap="#productmap" hidefocus="true"  src="/v2/res/images/page06-sanpham-bg.png" />
                     <map name="productmap">
-                        <area class="product" alt="" title="H'Biang * * *" href="#" shape="rect" coords="61,318,213,359" />
-                        <area class="product" alt="" title="H'Biang * *" href="#" shape="rect" coords="300,455,454,494" />
-                        <area class="product" alt="" title="H'Biang *" href="#" shape="rect" coords="655,583,808,623" />
+                        <area class="product" alt="" productid="3" title="H'Biang * * *" href="#" shape="rect" coords="61,318,213,359" />
+                        <area class="product" alt="" productid="2" title="H'Biang * *" href="#" shape="rect" coords="300,455,454,494" />
+                        <area class="product" alt="" productid="1" title="H'Biang *" href="#" shape="rect" coords="655,583,808,623" />
                     </map>
                 </div>
             </div>
@@ -114,7 +114,7 @@
                             <strong>100K/GÓI 250G</strong>
                         </p>
                         <p class="card-text text-xs-center">
-                            <img src="/v2/res/images/btn-order.png" class="product" style="cursor:pointer">
+                            <img src="/v2/res/images/btn-order.png" class="product" productid="1" style="cursor:pointer">
                         </p>
                     </div>
                 </div>
@@ -135,7 +135,7 @@
                             <strong>150K/GÓI 250G</strong>
                         </p>
                         <p class="card-text text-xs-center">
-                            <img src="/v2/res/images/btn-order.png" class="product" style="cursor:pointer">
+                            <img src="/v2/res/images/btn-order.png" class="product" productid="2" style="cursor:pointer">
                         </p>
                     </div>
                 </div>
@@ -156,7 +156,7 @@
                             <strong>200K/GÓI 250G</strong>
                         </p>
                         <p class="card-text text-xs-center">
-                            <img src="/v2/res/images/btn-order.png" class="product" style="cursor:pointer">
+                            <img src="/v2/res/images/btn-order.png" class="product" productid="3" style="cursor:pointer">
                         </p>
                     </div>
                 </div>
@@ -275,7 +275,7 @@
                         </li>
 
                         <li class="wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;"><i class="fa fa-facebook"></i>
-                            <p>facebook.com/hbiang</p>
+                            <p><a target="_blank" style="color:#666" href="http://facebook.com/DalatBespokeCoffee">facebook.com/hbiang</a></p>
                         </li>
                     </ul>
 
@@ -321,7 +321,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <table class="table table-responsive">
+        <table class="table table-responsive" id="cart-products">
             <thead>
                 <tr>
                     <th class="fit hidden-xs-down">#</th>
@@ -429,6 +429,8 @@
                 if (products[i].id == id)
                     products[i].qty = 0;
             }
+
+            renderShoppingCart();
         }
 
         function addProduct(id) {
@@ -438,13 +440,94 @@
                         products[i].qty = 1;
                 }
             }
+
+            renderShoppingCart();
         }
 
-        
+        // format currency to VNĐ
+        function formatCurrency(num) {
+            return num.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.") + 'đ';
+        }
+
+        function renderShoppingCart() {
+             var index = 1;
+             var htmlString = '';
+
+             $('#cart-products tbody')
+                .empty();
+
+             for(var i = 0; i < products.length; i++) {
+                var product = products[i];
+                if (product.qty > 0) {
+                    itemHtml = '<tr productid="' + product.id + '"><th class="hidden-xs-down" scope="row">' + index + '</th>'
+                    + '<td>' + product.name + '</td>'
+                    + '<td class="text-xs-center">'
+                        + '<input class="form-control text-xs-center product-qty" min="1" max="9999" type="number" value="' + product.qty + '" id="example-number-input">'
+                    + '</td>'
+                    + '<td class="text-xs-right">' + formatCurrency(product.qty * product.price) + '</td>'
+                    + '<td class="text-xs-right">'
+                        + '<button type="button" class="btn btn-secondary btn-sm product-remove" productid="' + product.id + '" style="box-shadow: none" title="Xóa">'
+                            + '<i style="color:#aaa;font-size: 1.0rem" class="fa fa-times-circle"></i>'
+                        + '</button>'
+                    '</td></tr>';
+
+                    htmlString += itemHtml;
+
+                    index++;
+                }
+             }
+
+             if (htmlString != '') {
+                htmlString += ' <tr>'    
+                htmlString += '<th class="hidden-xs-down" scope="row"></th>'
+                htmlString += '<td colspan="2" class="text-xs-right">'
+                htmlString += 'Tổng cộng'
+                htmlString += '</td>'                    
+                htmlString += '<td class="text-xs-right" style="font-size: 1.2rem"><strong>' + formatCurrency(calcTotal()) + '</strong></td>'
+                htmlString += '<td></td>'
+                htmlString += '</tr>';
+
+                $('#cart-products tbody')
+                .empty()
+                .append($(htmlString));
+
+                bindCartEvents();
+             }  else {
+                 $('#myModal').modal('hide');
+             }         
+        }
+
+        function bindCartEvents() {
+            $('#cart-products .product-remove').bind('click', function() {
+                var btn = $(this);
+                var row = btn.closest('tr');
+                var productid = row.attr('productid');
+
+                removeProduct(productid);
+                
+                renderShoppingCart();
+            });
+
+            $('#cart-products .product-qty').bind('mouseup keyup', function() {
+                var number = $(this);
+                var qty = number.val();
+                
+                var row = number.closest('tr');
+                var productid = row.attr('productid');
+
+                if (products[productid - 1].qty != qty) {
+                    updateProductQty(productid, qty);
+
+                    renderShoppingCart();
+                }                
+            });
+        }
 
         $(document).ready(function() {
+            // re-map when resize image
             $('map').imageMapResize();
             
+            // back to top button
             $('<p id="back-to-top" style="display:none;"><a href="#top" alt="Back to top"><span></span></a></p>')
                 .click(function () {
                     $('html,body').animate({
@@ -455,11 +538,21 @@
                 .appendTo($('body'));
         });
         
+        // handle add product button
         $(".product").on("click", function(e){
             e.preventDefault();
+            var item = $(this);
+            var id = item.attr('productid');
+            
+            addProduct(id);
+            renderShoppingCart();
+
+            console.log(products);
+
             $('#myModal').modal();
         });
         
+        // scroll to top
         function animateButton() {
             var button = $('#back-to-top');
             var scrollPosition = $(window).scrollTop();
@@ -473,9 +566,13 @@
         /**
          * Run the animateButton function on window resize, scroll, and load.
          */
+
+         
         $(window).resize(animateButton);
         $(window).scroll(animateButton);
-        $(window).load(animateButton);
+        $(window).on('load', function () {
+            animateButton();
+        });
 
         //num.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
         ///(\d)(?=(\d{3})+$)/g
