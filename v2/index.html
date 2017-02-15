@@ -367,6 +367,10 @@
         <p class="text-xs-small"><i>(Vui lòng nhập các thông tin bên dưới để hoàn tất việc đặt hàng)</i></p>
         <div>      
             <form id="order-form">
+                <input type="hidden" name="product1_qty" id="product1_qty" />
+                <input type="hidden" name="product2_qty" id="product2_qty" />
+                <input type="hidden" name="product3_qty" id="product3_qty" />
+
                 <div class="form-group">      
                     <label for="exampleTextarea">TÊN KHÁCH HÀNG</label>          
                     <input class="form-control" type="text" value="" id="txt_name" name="txt_name"  maxlength="150">
@@ -586,7 +590,7 @@
                 }
             });
 
-             $.post('http://45.119.81.13/t/test1.aspx', 
+             $.post('http://localhost:56957/english/t/contact.aspx', 
                 $('#contact-form').serialize()
              , function (res) {
                 if (res) {
@@ -604,7 +608,13 @@
                 }
             });
 
-             $.post('http://45.119.81.13/t/test1.aspx', 
+            // update product quantity before submit
+            for(var i = 0; i < products.length; i++) {
+                var id = '#product' + (i*1 + 1) + '_qty';
+                $(id).val(products[i].qty);                
+            }
+
+             $.post('http://localhost:56957/english/t/order.aspx', 
                 $('#order-form').serialize()
              , function (res) {
                 if (res) {
