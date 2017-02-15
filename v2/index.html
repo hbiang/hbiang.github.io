@@ -590,7 +590,7 @@
                 }
             });
 
-             $.post('http://localhost:56957/english/t/contact.aspx', 
+             $.post('http://45.119.81.13/t/contact.aspx', 
                 $('#contact-form').serialize()
              , function (res) {
                 if (res) {
@@ -614,7 +614,7 @@
                 $(id).val(products[i].qty);                
             }
 
-             $.post('http://localhost:56957/english/t/order.aspx', 
+             $.post('http://45.119.81.13/t/order.aspx', 
                 $('#order-form').serialize()
              , function (res) {
                 if (res) {
