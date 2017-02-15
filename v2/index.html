@@ -372,25 +372,25 @@
         <div>      
             <div class="form-group">      
                 <label for="exampleTextarea">TÊN KHÁCH HÀNG</label>          
-                <input class="form-control" type="text" value="" id="txtName">
+                <input class="form-control" type="text" value="" id="txt_name" name="txt_name">
             </div>
             <div class="form-group">
                 <label for="exampleTextarea">THÔNG TIN LIÊN HỆ</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Số điện thoại hoặc Email">                
+                <input type="email" class="form-control" id="txt_contactinfo" name="txt_contactinfo" placeholder="Số điện thoại hoặc Email">                
             </div>
             <div class="form-group">
                 <label for="exampleTextarea">ĐỊA CHỈ GIAO HÀNG (nếu cần)</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">                
+                <input type="email" class="form-control" id="txt_address" name="txt_address">                
             </div>
             <div class="form-group">
                 <label for="exampleTextarea">LỜI NHẮN</label>
-                <textarea class="form-control" id="exampleTextarea" rows="2"></textarea>
+                <textarea class="form-control" id="txt_notes" rows="2" name="txt_notes"></textarea>
             </div>            
         </div>
       </div>
       <div class="modal-footer">
         <!--<button type="button" class="btn btn-secondary btn-md" data-dismiss="modal" style="margin-right:0.5rem;">Mua tiếp</button>-->
-        <button type="button" class="btn btn-primary btn-md" style="background-color: #a25e33">Đặt hàng</button>
+        <button type="button" id="btn-order" class="btn btn-primary btn-md" style="background-color: #a25e33">Đặt hàng</button>
       </div>
     </div>
   </div>
@@ -523,6 +523,40 @@
             });
         }
 
+        function orderFormValidation() {
+            var name = $('#txt_name');
+            if (name.val() == '') {
+                alert('Vui lòng nhập Tên khách hàng');
+                name.focus();
+                return false;
+            }
+
+            var contact = $('#txt_contactinfo');
+            if (contact.val() == '') {
+                alert('Vui lòng nhập Thông tin liên hệ');
+                contact.focus();
+                return false;
+            }
+
+            return true;
+        }
+
+        function contactFormValidation() {
+            var name = $('#txt_name');
+            if (name.val() == '') {
+                alert('Vui lòng nhập Tên khách hàng');
+                return false;
+            }
+
+            var contact = $('#txt_contactinfo');
+            if (contact.val() == '') {
+                alert('Vui lòng nhập Thông tin liên hệ');
+                return false;
+            }
+
+            return true;
+        }
+
         $(document).ready(function() {
             // re-map when resize image
             $('map').imageMapResize();
@@ -536,21 +570,28 @@
                     return false;
                 })
                 .appendTo($('body'));
-        });
-        
-        // handle add product button
-        $(".product").on("click", function(e){
-            e.preventDefault();
-            var item = $(this);
-            var id = item.attr('productid');
-            
-            addProduct(id);
-            renderShoppingCart();
 
-            console.log(products);
+            // order button event
+            $('#btn-order').bind('click', function() {
+                if (orderFormValidation()) {
+                    console.log('summit form');
+                }
+            });
 
-            $('#myModal').modal();
-        });
+            // handle add product button
+            $(".product").on("click", function(e){
+                e.preventDefault();
+                var item = $(this);
+                var id = item.attr('productid');
+                
+                addProduct(id);
+                renderShoppingCart();
+
+                console.log(products);
+
+                $('#myModal').modal();
+            });
+        });      
         
         // scroll to top
         function animateButton() {
