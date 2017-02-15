@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>H'Biang Demo 01</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="robots" content="index, follow" />
+
+    <!--
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    -->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/jquery.easings.min.js" type="text/javascript"></script>
+    <script src="js/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="js/jquery.fullpage.js" type="text/javascript"></script>
+
+    <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="http://bootswatch.com/journal/bootstrap.min.css" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" media="all" href="css/demo01.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/jquery.fullpage.css" />
+</head>
+<body>
+    <div id="fullpage">
+        <section id="hello_section" class="section active">
+            <div id="p1_logo_area">
+                <img id="p1_logo" src="images/p1_logo.jpg">
+            </div>
+            <div id="p1_logo_area" style="margin-top:0;">
+                <img id="p1_products" src="images/p1_products.jpg">
+            </div>            
+        </section>
+        <section id="about_section" class="section">
+            <img id="p2_products" src="images/p2_intro.jpg">
+        </section>
+        <section id="products_section" class="section">
+            <img id="p3_products" src="images/p3_products.jpg">
+        </section>
+        <section id="contact_section" class="section">
+            <div id="contact_section_head" style="height:30%">
+                <img id="p4_title" src="images/p4_title.jpg">
+            </div>
+            <div id="contact_section_body" style="height:70%;">
+
+            </div>
+        </section>
+        <section id="social_section" class="section">
+            
+        </section>
+    </div>
+
+    <nav class="dark">
+        <ul id="m_menu">
+            <li data-menuanchor="hello" class="active">
+                <a href="#hello">
+                    <i class="fa fa-home"></i>
+                    <span class="desc">Trang chủ</span>
+                </a>
+            </li>
+            <li data-menuanchor="about">
+                <a href="#about">
+                    <span class="fa fa-info"></span>
+                    <span class="desc">Giới thiệu</span>
+                </a>
+            </li>
+            <li data-menuanchor="product">
+                <a href="#product">
+                    <span class="fa fa-shopping-bag"></span>
+                    <span class="desc">Sản phẩm</span>
+                </a>
+            </li>
+            <li data-menuanchor="contact">
+                <a href="#contact">
+                    <span class="fa fa-envelope"></span>
+                    <span class="desc">Liên hệ</span>
+                </a>
+            </li>
+            <li data-menuanchor="social">
+                <a id="link_facebook" href="#social">
+                    <span class="fa fa-facebook"></span>
+                    <span class="desc">Facebook</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="order_modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <p style="font-weight:bold;font-size:1.2em">Loại 300 - Vị đậm - 250g</p>
+
+                </div>
+
+                <div class="modal-body">
+                    <p style="font-size:1.2em;">
+                       <input type="text" class="form-control" id="txt_qty" style="width:60px;display:inline;text-align:center;font-size:1.2em" maxlength="3" />
+                        gói = 1.500.000đ
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Thêm vào đơn hàng</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+            $('#fullpage').fullpage({
+                sectionSelector: '.section',
+                slideSelector: '.slide',
+                slidesNavigation: true,
+                slidesNavPosition: 'bottom',
+                anchors: ['hello', 'about', 'product', 'contact', 'social'],
+                menu: '#m_menu'
+            });
+
+            /*$('#link_facebook').bind('click', function (e) {
+                e.stopPropagation();
+                alert('link to facebook page');
+            });*/
+
+            $('#link_order').bind('click', function () {
+                $('#order_modal').modal('show');
+            });
+        });
+    </script>
+</body>
+</html>

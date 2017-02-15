@@ -249,8 +249,9 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleTextarea">LỜI NHẮN</label>
+                                <label for="exampleTextarea">LỜI NHẮN</label>                                
                                 <textarea class="form-control" id="txt_notes" name="txt_notes" rows="3"></textarea>
+                                <div class="form-control-feedback">Vui lòng nhập lời nhắn</div>
                             </div>
 
 
@@ -576,6 +577,16 @@
                 row.find('.form-control-feedback').show();
 
                 contact.focus();
+                return false;
+            }
+
+            var notes = $('#contact-form #txt_notes');
+            if (notes.val() == '') {
+                var row = notes.closest('.form-group');
+                row.addClass('has-danger');
+                row.find('.form-control-feedback').show();
+
+                notes.focus();
                 return false;
             }
 
