@@ -248,6 +248,7 @@ ul.footer_wrapper {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
+    margin:0;
 }
 
 ul.footer_wrapper > li {
@@ -285,5 +286,21 @@ ul.footer_wrapper > li > span {
     margin-right: 20px;
     margin-top: 0.3rem;
 }
+
+input[type=checkbox] {
+    appearance: none;
+    -moz-appearance: none;
+-webkit-appearance: none;
+border-color: #ccc;
+}
+
+/* input[type=checkbox]::before {
+    border:none;
+}
+*/
+
+input[type=checkbox]::after {
+   border-color: #888;
+} 
 
 #footer-links  a {color:#fff;text-decoration: underline;}
