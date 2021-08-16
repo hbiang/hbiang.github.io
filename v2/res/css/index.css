@@ -244,16 +244,46 @@ input[type="number"]:focus {
   -moz-appearance: number-input;
 }
 
+ul.footer_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+ul.footer_wrapper > li {
+    width: 30%;
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 767px) {
+    ul.footer_wrapper > li {
+        width: 100%;
+    }
+}
+
+ul.footer_wrapper > li > span {
+    font-weight: bold;
+    display: block;
+    padding-bottom: 1rem;
+}
+
+.footer_wrapper li p {
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+.footer-column-last {
+    flex: 2;
+}
+
 #footer-links {
     list-style: none;
     padding: 0;
-    display: inline-block;
-    
 }
 
 #footer-links li {
-    display: inline-block;
     margin-right: 20px;
+    margin-top: 0.3rem;
 }
 
 #footer-links  a {color:#fff;text-decoration: underline;}
