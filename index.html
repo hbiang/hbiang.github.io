@@ -709,7 +709,7 @@
                 }
             });
 
-            $.post('http://w.hbiang.com/contact.php',
+            $.post('https://w.hbiang.com/contact.php',
                 $('#contact-form').serialize()
                 , function (res) {
                     if (res) {
@@ -736,7 +736,7 @@
                 $(id).val(products[i].qty);
             }
 
-            $.post('http://w.hbiang.com/order.php',
+            $.post('https://w.hbiang.com/order.php',
                 $('#order-form').serialize()
                 , function (res) {
                     if (res) {
